@@ -155,25 +155,3 @@ plt.xlabel('C')
 plt.ylabel('Gamma')
 plt.title('SVR Grid Search Accuracies')
 plt.show()
-
-results.plot('param_C', 'mean_train_score')
-results.plot('param_C', 'mean_test_score', ax=plt.gca())
-plt.fill_between(results.param_C.astype(int),
-                 results['mean_train_score'] + results['std_train_score'],
-                 results['mean_train_score'] - results['std_train_score'], alpha=0.2)
-plt.fill_between(results.param_C.astype(int),
-                 results['mean_test_score'] + results['std_test_score'],
-                 results['mean_test_score'] - results['std_test_score'], alpha=0.2)
-plt.legend()
-plt.show()
-
-results.plot('param_gamma', 'mean_train_score')
-results.plot('param_gamma', 'mean_test_score', ax=plt.gca())
-plt.fill_between(results.param_gamma.astype(int),
-                 results['mean_train_score'] + results['std_train_score'],
-                 results['mean_train_score'] - results['std_train_score'], alpha=0.2)
-plt.fill_between(results.param_gamma.astype(int),
-                 results['mean_test_score'] + results['std_test_score'],
-                 results['mean_test_score'] - results['std_test_score'], alpha=0.2)
-plt.legend()
-plt.show()
